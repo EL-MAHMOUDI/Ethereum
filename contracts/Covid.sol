@@ -26,7 +26,7 @@ contract Covid {
   
   //Declaring constructor
   constructor() public {
-    addPassenger("F145Lk2", "TOM", "LONDON", "NEW YORK");
+    //addPassenger("F145Lk2", "TOM", "LONDON", "NEW YORK");
   }
 
   //add a function to add an infected Passenger

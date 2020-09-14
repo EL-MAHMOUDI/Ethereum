@@ -9,6 +9,7 @@ App = {
 
   initWeb3: async function() {
    // Modern dapp browsers...
+   // This is the case of Metamask added to chrome
     if (window.ethereum) {
       App.web3Provider = window.ethereum;
       try {
@@ -103,7 +104,7 @@ App = {
     App.contracts.Covid.deployed().then(instance =>{
       return instance.addPassenger(passengerId, name, from, to);
     }).then(result =>{
-      //Wait for the vote to update
+      //Wait for the passengers to update
       $("#content").hide();
       $("#loader").show();
     }).catch(err => console.log(err));
@@ -117,6 +118,7 @@ App = {
         toBlock: 'latest'
       }).watch(function(error, event){
         console.log("event triggered", event);
+        // Reload when a new vote is recorded
         App.render();
 
       });
